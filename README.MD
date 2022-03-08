@@ -2,7 +2,7 @@
 
 ## Description
 
-The crate application is an online community where users can buy, sell, search for, and discover music. crate is designed to fill the gap left behind when brick and morter music stores began to shutter. While it is a marketplace, its primary goal is to create a platform to connect users and gather together the in the ways they used too. 
+The crate application is an online community where users can buy, sell, search for, and discover music. crate is designed to fill the gap left behind when brick and morter music stores began to shutter. While it is a marketplace, its primary goal is to create a platform to connect users and gather together the in the ways they used too. Users can post music for sale, dig through records being sold by others, post listings for records they are having trouble finding, comment, update, edit and delete posts. 
 
 crate is a full stack web application built primarily on node.js, MySql, Express, and Handlebars. 
 
@@ -21,7 +21,7 @@ Users can:
 
 ## Installation
 
-`git clone git@github.com:mitchroutman/crate.git`
+`git clone git@github.com:Will-Neal/crate.git`
 
 
 ## Usage
@@ -37,7 +37,7 @@ The homepage once logged in will look like this -
 ## Credits
 
  - Priscilla Ma - https://github.com/middlenamestar
- - Will Neal - https://github.com/Will-Neal
+ - Mitch Routman - https://github.com/mitchroutman
 
 ## License
 
