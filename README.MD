@@ -100,4 +100,5 @@ If you created an application or package and would like other developers to cont
 ## Questions and Contact
 
 If you have any questions please contact the author at [willwneal@gmail.com](mailto:willwneal@gmail.com).
-Other work by author can be found at [GitHub](https://github.com/Will-Neal?tab=repositories)
+<br>
+Other work by the author can be found at [GitHub](https://github.com/Will-Neal?tab=repositories)
