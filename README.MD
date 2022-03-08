@@ -97,3 +97,7 @@ The following technologies were used in the creation of this application:
 
 If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
 
+## Questions and Contact
+
+If you have any questions please contact the author at [willwneal@gmail.com](mailto:willwneal@gmail.com).
+Other work by author can be found at [GitHub](https://github.com/Will-Neal?tab=repositories)
