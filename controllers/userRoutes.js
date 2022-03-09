@@ -37,17 +37,19 @@ router.get('/profile/:id', async (req, res) => {
         order: [["id", "DESC"]],
         include: [{ model: User }]
     })
-
     const comments = commentsObj.map((comment) => comment.get({ plain: true}));
+
+    const loggedIn = req.session.loggedIn;
+
     if (sales.length > 0) {
         const username = sales[0].user.name;
-        res.render('profile', {sales, seeks, username})
+        res.render('profile', {sales, seeks, username, loggedIn})
     } else if (seeks.length > 0) {
         const username = seeks[0].user.name;
-        res.render('profile', {sales, seeks, username})
+        res.render('profile', {sales, seeks, username, loggedIn})
     } else if (comments.length > 0) {
         const username = comments[0].user.name;
-        res.render('profile', {sales, seeks, username})
+        res.render('profile', {sales, seeks, username, loggedIn})
     }
    
     // console.log(requests)
