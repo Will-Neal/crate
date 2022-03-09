@@ -15,35 +15,43 @@
     </div>
     <div class="col-lg-5 col-md-6 my-3 py-3">
       <p>{{sale.description}}</p>
-      <p>posted by {{sale.user.name}}</p>
-      <p>{{format_date sale.createdAt}}</p>
-    </div>
-  </div>
-  {{!-- COMMENTS, IF SHOWN --}}
-  <div class="row justify-content-center">
-    <div class="col-lg-8 my-2">
+      <p>posted by <a href="/user/profile/{{sale.user.id}}">{{sale.user.name}}</a></p>
+      <p>on {{format_date sale.createdAt}}</p>
+
+      {{!-- Start Comments and Form --}}
+      <br>
+      <br>
       {{#if showComment}}
-      <h5 class="text-center py-3" style="font-weight: bold;">comments</h5>
+      <p  style="font-weight: bold"> Comments </p>
       {{/if}}
       {{#each comments as |comment|}}
-      <div class="col py-2">
-        <p>{{comment.user.name}} said: {{comment.comment}}</p>
-        <p>{{format_date comment.createdAt}}</p>
+      <div>
+        <p>{{comment.user.name}} - {{format_date comment.createdAt}}</p>
+        <p>{{comment.comment}}</p>
       </div>
+      <br>
       {{/each}}
-    </div>
-  </div>
-  {{!-- comment form, always shown --}}
-  <div class="row justify-content-center">
-    <div class="col-lg-6 col-md-8 col-10 my-3">
+
       <form action="/find/comment/{{sale.id}}" method="POST">
         <div class="form-group">
-          <label for="comment" name="comment">say somethin</label>
-          <textarea required type="text" name="comment" id="comment" class="form-control" rows="3"></textarea>
+          <label style="font-weight: bold" for="comment" name="comment">Comment</label>
+          <textarea required type="text" name="comment" id="comment" class="form-control"></textarea>
         </div>
-        <button type="submit" class="btn btn-outline-dark">post</button>
+        <button type="submit" class="btn btn-outline-dark">Comment</button>
+        {{!-- <a href="/" class="btn btn-outline-dark">cancel</a> --}}
       </form>
+
+      {{!-- END Comments and Form --}}
     </div>
   </div>
-{{!-- close container enclosing all context on this page. --}}
 </div>
+
+{{!-- use another row for comments. each comment is a col.--}}
+
+{{!-- {{#each comments as |comment|}}
+<div class="card">
+  <div class="card-body">
+    <h6 class="card-title">{{comment.comment}}</h6>
+  </div>
+</div>
+{{/each}} --}}

@@ -16,6 +16,27 @@ router.get('/register', (req, res) => {
     res.render('register', {loggedIn})
 })
 
+router.get('/profile/:id', async (req, res) => {
+    id = req.params.id
+    const salesObj = await Sale.findAll({
+        where: {user_id: id},
+        order: [["id", "DESC"]],
+        include: [{ model: User}]
+    }); 
+    const sales = salesObj.map((sale) => sale.get({ plain:true }));
+
+    const requestObj = await Request.findAll({
+        where: {user_id: id},
+        order: [["id", "DESC"]],
+        include: [{ model: User }]
+    });
+    const seeks = requestObj.map((request) => request.get({ plain:true }));
+    username = sales[0].user.name;
+    // console.log(requests)
+
+    res.render('profile', {sales, seeks, username})
+})
+
 //register new user in db
 router.post('/register', async (req, res) => {
     //console.log(req.session)

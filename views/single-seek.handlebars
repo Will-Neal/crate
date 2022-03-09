@@ -15,8 +15,8 @@
     </div>
     <div class="col-lg-5 col-md-6 my-3 py-3">
       <p>{{seek.description}}</p>
-      <p>posted by {{seek.user.name}}</p>
-      <p>{{format_date seek.createdAt}}</p>
+      <p>posted by <a href="/user/profile/{{seek.user.id}}">{{seek.user.name}}</a></p>
+      <p>on {{format_date seek.createdAt}}</p>
     </div>
   </div>
   {{!-- COMMENTS, IF SHOWN --}}
