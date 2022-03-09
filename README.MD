@@ -2,7 +2,7 @@
 
 ## Description
 
-The crate application is an online community where users can buy, sell, search for, and discover music. crate is designed to fill the gap left behind when brick and morter music stores began to shutter. While it is a marketplace, its primary goal is to create a platform to connect users and gather together the in the ways they used too. Users can post music for sale, dig through records being sold by others, post listings for records they are having trouble finding, comment, update, edit and delete posts. 
+The crate application is an online community where users can buy, sell, search for, and discover music. crate is designed to fill the gap left behind when brick and morter music stores began to shutter. While it is a marketplace, its primary goal is to create a platform to connect users and gather together the in the ways they used too. Users can post music for sale, dig through records being sold by others, post listings for records they are having trouble finding, comment, update, edit and delete posts. They can also look at other user's profiles which show all the records that user has previously sold or searched for. 
 
 crate is a full stack web application built primarily on node.js, MySql, Express, and Handlebars. 
 
