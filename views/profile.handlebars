@@ -1,8 +1,9 @@
 {{!-- CONTAINER & BACKGROUND IMAGE --}}
-<div id="home-bg-img" class="container my-4" style="background-image: url(/images/cassette.jpeg); background-size: cover;">
+<div id="home-bg-img" class="container my-4"
+  style="background-image: url(/images/cassette.jpeg); background-size: cover;">
   {{!-- GREETING --}}
   {{!-- {{#if loggedIn}}
-    <h3 class="my-3">hey, {{username}}</h3>
+  <h3 class="my-3">hey, {{username}}</h3>
   {{/if}} --}}
   {{!-- MAIN CONTENT --}}
   <h2> {{username}}'s Profile</h2>
@@ -10,57 +11,34 @@
     <div class="col-lg-5 bg-white my-3 py-2" style="opacity: 0.7">
       <h3 class="py-3">latest in the crate</h3>
       {{#each sales as |sale|}}
-        <div class="py-1">
-          <a class="link" href="/find/{{id}}">
-            <p>{{album_name}} by {{artist}} posted by {{user.name}}</p>
-          </a>
-          <p>{{format_date createdAt}}</p>
-        </div>
+      <div class="py-1">
+        <a class="link" href="/find/{{id}}">
+          <p>{{album_name}} by {{artist}} posted by {{user.name}}</p>
+        </a>
+        <p>{{format_date createdAt}}</p>
+      </div>
       {{/each}}
     </div>
     <div class="col-lg-5 bg-white my-3 py-2" style="opacity: 0.7">
       <h3 title="pick up the phone..." class="py-3">latest calls</h3>
-        
-        {{#each seeks as |seek|}}
-          <div class="py-1">
-            <a class="link" href="/seek/{{id}}">
-              <p>{{album_name}} by {{artist}} posted by {{user.name}}</p>
-            </a>
-            <p>{{format_date createdAt}}</p>
-          </div>
-        {{/each}}
+
+      {{#each seeks as |seek|}}
+      <div class="py-1">
+        <a class="link" href="/seek/{{id}}">
+          <p>{{album_name}} by {{artist}} posted by {{user.name}}</p>
+        </a>
+        <p>{{format_date createdAt}}</p>
+      </div>
+      {{/each}}
     </div>
+
   </div>
 </div>
 
+{{!-- {{#if showComment}}
+<p style="font-weight: bold"> Comments </p>
+{{/if}} --}}
+
+
+
 {{!-- unused but saving --}}
-
-{{!-- TOGGLE --}}
-{{!-- <label class="switch">
-  <input id="check" type="checkbox">
-  <span class="slider round"></span>
-</label> --}}
-
-{{!-- CARD FOR DIGS --}}
-{{!-- <div class="card my-4"> --}}
-        {{!-- <div class="card-body"> --}}
-          {{!-- <h5 class="card-title">{{album_name}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{artist}}</h6>
-      <p class="card-text">{{description}}</p>
-      <p class="card-text">{{user.name}}</p>
-      <p class="card-text">{{format_date createdAt}}</p>
-      <a href="/find/{{id}}" class="btn btn-secondary">View</a> --}}
-        {{!-- </div> --}}
-      {{!-- </div> --}}
-
-{{!-- CARD FOR SEEKING --}}
-{{!-- <div class="card my-4">
-          <div class="card-body"> --}}
-{{!-- <h5 class="card-title">{{album_name}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{artist}}</h6>
-            <p class="card-text">{{description}}</p>
-            <p class="card-text">{{user.name}}</p>
-            <p class="card-text">{{format_date createdAt}}</p>
-            <a href="find/{{id}}" class="btn btn-secondary">View</a>
-          </div>
-        </div> --}}

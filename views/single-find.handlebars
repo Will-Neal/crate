@@ -26,7 +26,7 @@
       {{/if}}
       {{#each comments as |comment|}}
       <div>
-        <p>{{comment.user.name}} - {{format_date comment.createdAt}}</p>
+        <p><a href="/user/profile/{{comment.user.id}}">{{comment.user.name}}</a> - {{format_date comment.createdAt}}</p>
         <p>{{comment.comment}}</p>
       </div>
       <br>

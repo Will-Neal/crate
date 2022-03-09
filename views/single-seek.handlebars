@@ -27,7 +27,7 @@
       {{/if}}
       {{#each comments as |comment|}}
       <div class="col py-2">
-        <p>{{comment.user.name}} said: {{comment.comment}}</p>
+        <p><a href="/user/profile/{{comment.user.id}}">{{comment.user.name}}</a> said: {{comment.comment}}</p>
         <p>{{format_date comment.createdAt}}</p>
       </div>
       {{/each}}

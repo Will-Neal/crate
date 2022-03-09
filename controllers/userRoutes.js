@@ -1,4 +1,4 @@
-const { Request, User, Sale } = require('../models/');
+const { Request, User, Sale, Comment } = require('../models/');
 const { restore } = require('../models/User');
 const router = require('express').Router();
 
@@ -31,10 +31,28 @@ router.get('/profile/:id', async (req, res) => {
         include: [{ model: User }]
     });
     const seeks = requestObj.map((request) => request.get({ plain:true }));
-    username = sales[0].user.name;
+
+    const commentsObj = await Comment.findAll({
+        where: {user_id: id},
+        order: [["id", "DESC"]],
+        include: [{ model: User }]
+    })
+
+    const comments = commentsObj.map((comment) => comment.get({ plain: true}));
+    if (sales.length > 0) {
+        const username = sales[0].user.name;
+        res.render('profile', {sales, seeks, username})
+    } else if (seeks.length > 0) {
+        const username = seeks[0].user.name;
+        res.render('profile', {sales, seeks, username})
+    } else if (comments.length > 0) {
+        const username = comments[0].user.name;
+        res.render('profile', {sales, seeks, username})
+    }
+   
     // console.log(requests)
 
-    res.render('profile', {sales, seeks, username})
+    
 })
 
 //register new user in db
